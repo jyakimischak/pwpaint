@@ -1,0 +1,11 @@
+
+CMAKE_MINIMUM_REQUIRED(VERSION 3.5.1)
+PROJECT(pwpaint)
+
+SET(CMAKE_C_COMPILER emcc)
+SET(CMAKE_CXX_COMPILER em++)
+
+FILE(GLOB sources src/*.cpp)
+ADD_EXECUTABLE(pwpaint.html ${sources})
+
+
