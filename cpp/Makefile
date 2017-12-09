@@ -123,32 +123,32 @@ pwpaint.html/fast:
 	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/build
 .PHONY : pwpaint.html/fast
 
-src/Main.o: src/Main.cpp.o
+src/PwPaint.o: src/PwPaint.cpp.o
 
-.PHONY : src/Main.o
+.PHONY : src/PwPaint.o
 
 # target to build an object file
-src/Main.cpp.o:
-	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/Main.cpp.o
-.PHONY : src/Main.cpp.o
+src/PwPaint.cpp.o:
+	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/PwPaint.cpp.o
+.PHONY : src/PwPaint.cpp.o
 
-src/Main.i: src/Main.cpp.i
+src/PwPaint.i: src/PwPaint.cpp.i
 
-.PHONY : src/Main.i
+.PHONY : src/PwPaint.i
 
 # target to preprocess a source file
-src/Main.cpp.i:
-	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/Main.cpp.i
-.PHONY : src/Main.cpp.i
+src/PwPaint.cpp.i:
+	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/PwPaint.cpp.i
+.PHONY : src/PwPaint.cpp.i
 
-src/Main.s: src/Main.cpp.s
+src/PwPaint.s: src/PwPaint.cpp.s
 
-.PHONY : src/Main.s
+.PHONY : src/PwPaint.s
 
 # target to generate assembly for a file
-src/Main.cpp.s:
-	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/Main.cpp.s
-.PHONY : src/Main.cpp.s
+src/PwPaint.cpp.s:
+	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/PwPaint.cpp.s
+.PHONY : src/PwPaint.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... pwpaint.html"
-	@echo "... src/Main.o"
-	@echo "... src/Main.i"
-	@echo "... src/Main.s"
+	@echo "... src/PwPaint.o"
+	@echo "... src/PwPaint.i"
+	@echo "... src/PwPaint.s"
 .PHONY : help
 
 

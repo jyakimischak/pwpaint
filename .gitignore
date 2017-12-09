@@ -4,3 +4,5 @@
 /cpp/src/cmake_install.cmake
 /cpp/src/pwpaint.html
 /cpp/src/pwpaint.js
+/node_modules/
+/dist/

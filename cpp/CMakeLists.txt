@@ -4,6 +4,7 @@ PROJECT(pwpaint)
 
 SET(CMAKE_C_COMPILER emcc)
 SET(CMAKE_CXX_COMPILER em++)
+#SET(CMAKE_CXX_STANDARD 11)
 
 FILE(GLOB sources src/*.cpp)
 ADD_EXECUTABLE(pwpaint.html ${sources})
