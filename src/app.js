@@ -1,7 +1,8 @@
 
 module.exports = {
     c : require("./js/functionExports.js"),
-    init : require("./js/init.js")
+    init : require("./js/init.js"),
+    const : require("./js/constants.js")
 }
 require.context(".", true, /^.*\.html$/)
 require.context(".", true, /^.*\.scss$/)

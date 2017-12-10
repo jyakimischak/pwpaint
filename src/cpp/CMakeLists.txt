@@ -5,8 +5,15 @@ PROJECT(pwpaint)
 SET(CMAKE_C_COMPILER emcc)
 SET(CMAKE_CXX_COMPILER em++)
 #SET(CMAKE_CXX_STANDARD 11)
-SET(CMAKE_CXX_FLAGS -s\ EXPORTED_FUNCTIONS="['_main', '_sayHello', '_setDisplaySize']")
-#SET(CMAKE_CXX_FLAGS -s\ EXPORTED_FUNCTIONS="['_sayHello']")
+
+STRING(CONCAT EXPORTED_FUNCTIONS "-s EXPORTED_FUNCTIONS=\"["
+    "'_main',"
+    "'_sayHello',"
+    "'_drawDebug',"
+    "'_setDisplaySize',"
+    "'_setPaBackgroundColor'"
+"]\"")
+SET(CMAKE_CXX_FLAGS ${EXPORTED_FUNCTIONS})
 
 FILE(GLOB sources src/*.cpp)
 ADD_EXECUTABLE(pwpaint.html ${sources})

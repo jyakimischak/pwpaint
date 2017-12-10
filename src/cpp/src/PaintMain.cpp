@@ -1,11 +1,21 @@
 
+//******************************************************
+// Main functions for the paint area
+// Author: Jonas Yakimischak - Poorwill Games
+//******************************************************
+
 #include <iostream>
 #include <SDL/SDL.h>
 #include "SDL_gfxPrimitives.h"
 #include <emscripten.h>
-#include "PwPaint.h"
+#include "PaintMain.h"
+#include "PaintAreaState.h"
 
 using namespace std;
+
+SDL_Surface* screen = NULL;
+SDL_Event e;
+
 
 /**
  * main function
@@ -34,6 +44,7 @@ extern "C" int main(int argc, char * argv[]) {
 void oneIter() {
   // handleInput();
     // cout << "run..." << endl;
+  paintAreaState.apply();
 }
 
 
@@ -51,7 +62,23 @@ extern "C" void setDisplaySize(int width, int height) {
   screen = SDL_SetVideoMode(width, height, 32, SDL_SWSURFACE);
 }
 
+//******************************************************************************************************************************
+// Color
+//******************************************************************************************************************************
 
+Color::Color() {
+  r = 0;
+  g = 0;
+  b = 0;
+  a = 255;
+}
+
+Color::Color(int r, int g, int b, int a) {
+  this->r = r;
+  this->g = g;
+  this->b = b;
+  this->a = a;
+}
 
 //******************************************************************************************************************************
 // Debug functions.
@@ -64,6 +91,12 @@ extern "C" void sayHello() {
   cout << "I am saying hello.1" << endl;
 }
 
+extern "C" void drawDebug() {
+  filledEllipseRGBA(screen,
+                    600, 400,
+                    25, 150,
+                    0, 255, 0, 255);
+}
 
 
 

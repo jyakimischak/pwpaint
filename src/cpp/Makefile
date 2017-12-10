@@ -123,32 +123,59 @@ pwpaint.html/fast:
 	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/build
 .PHONY : pwpaint.html/fast
 
-src/PwPaint.o: src/PwPaint.cpp.o
+src/PaintAreaState.o: src/PaintAreaState.cpp.o
 
-.PHONY : src/PwPaint.o
+.PHONY : src/PaintAreaState.o
 
 # target to build an object file
-src/PwPaint.cpp.o:
-	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/PwPaint.cpp.o
-.PHONY : src/PwPaint.cpp.o
+src/PaintAreaState.cpp.o:
+	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/PaintAreaState.cpp.o
+.PHONY : src/PaintAreaState.cpp.o
 
-src/PwPaint.i: src/PwPaint.cpp.i
+src/PaintAreaState.i: src/PaintAreaState.cpp.i
 
-.PHONY : src/PwPaint.i
+.PHONY : src/PaintAreaState.i
 
 # target to preprocess a source file
-src/PwPaint.cpp.i:
-	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/PwPaint.cpp.i
-.PHONY : src/PwPaint.cpp.i
+src/PaintAreaState.cpp.i:
+	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/PaintAreaState.cpp.i
+.PHONY : src/PaintAreaState.cpp.i
 
-src/PwPaint.s: src/PwPaint.cpp.s
+src/PaintAreaState.s: src/PaintAreaState.cpp.s
 
-.PHONY : src/PwPaint.s
+.PHONY : src/PaintAreaState.s
 
 # target to generate assembly for a file
-src/PwPaint.cpp.s:
-	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/PwPaint.cpp.s
-.PHONY : src/PwPaint.cpp.s
+src/PaintAreaState.cpp.s:
+	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/PaintAreaState.cpp.s
+.PHONY : src/PaintAreaState.cpp.s
+
+src/PaintMain.o: src/PaintMain.cpp.o
+
+.PHONY : src/PaintMain.o
+
+# target to build an object file
+src/PaintMain.cpp.o:
+	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/PaintMain.cpp.o
+.PHONY : src/PaintMain.cpp.o
+
+src/PaintMain.i: src/PaintMain.cpp.i
+
+.PHONY : src/PaintMain.i
+
+# target to preprocess a source file
+src/PaintMain.cpp.i:
+	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/PaintMain.cpp.i
+.PHONY : src/PaintMain.cpp.i
+
+src/PaintMain.s: src/PaintMain.cpp.s
+
+.PHONY : src/PaintMain.s
+
+# target to generate assembly for a file
+src/PaintMain.cpp.s:
+	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/PaintMain.cpp.s
+.PHONY : src/PaintMain.cpp.s
 
 # Help Target
 help:
@@ -159,9 +186,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... pwpaint.html"
 	@echo "... edit_cache"
-	@echo "... src/PwPaint.o"
-	@echo "... src/PwPaint.i"
-	@echo "... src/PwPaint.s"
+	@echo "... src/PaintAreaState.o"
+	@echo "... src/PaintAreaState.i"
+	@echo "... src/PaintAreaState.s"
+	@echo "... src/PaintMain.o"
+	@echo "... src/PaintMain.i"
+	@echo "... src/PaintMain.s"
 .PHONY : help
 
 
