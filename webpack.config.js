@@ -11,15 +11,24 @@ module.exports = function(env) {
             entry: path.join(__dirname, "src", "app.js"),
             output: {
                 path: path.join(__dirname, "dist"),
-                filename: "js/pwpaint.js",
-                libraryTarget: 'var',
-                library: 'cc'
+                filename: "js/pwpaint-bundle.js",
+                libraryTarget: "var",
+                library: "pw"
             },
             context : path.resolve("./src"),
             module: {
                 loaders: [
-                    //index page
-                    { test: /index\.html$/, loader: "file-loader?name=[name].[ext]" },
+                    //html pages
+                    { test: /.*\.html$/, loader: "file-loader?name=[path]/[name].[ext]" },
+
+                    //cpp
+                    { test: /pwpaint\.html$/, loader: "ignore-loader" },
+                    { test: /pwpaint\.js$/, loader: "file-loader?name=js/[name].[ext]" },
+                    
+                    //jquery
+                    { test: /jquery\.min\.js$/, loader: "file-loader?name=js/[name].[ext]" },
+                    { test: /jquery\.color\.js$/, loader: "file-loader?name=js/[name].[ext]" },
+                    
 
                     //font-awesome, we might change to something like iconmoon - and pick a few webfonts
                     { test:/font-awesome\.min\.css$/, loader: "file-loader?name=css/[name].[ext]" },
@@ -37,7 +46,7 @@ module.exports = function(env) {
 
                     //sass
                     {
-                        test: /styles\.scss$/,
+                        test: /.*\.scss$/,
                         loader: extractBundleSass.extract({
                             fallback: "style-loader",
                             use: [

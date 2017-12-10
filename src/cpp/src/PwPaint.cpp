@@ -1,6 +1,7 @@
 
 #include <iostream>
 #include <SDL/SDL.h>
+#include "SDL_gfxPrimitives.h"
 #include <emscripten.h>
 #include "PwPaint.h"
 
@@ -9,29 +10,21 @@ using namespace std;
 /**
  * main function
  */
-int main(int argc, char * argv[]) {
-  cout << "running... " << endl;
+extern "C" int main(int argc, char * argv[]) {
+   SDL_Init(SDL_INIT_EVERYTHING);
 
-  //Start SDL
-  SDL_Init(SDL_INIT_EVERYTHING);
-  
-  SDL_DisplayMode dm;
 
-if (SDL_GetDesktopDisplayMode(0, &dm) != 0)
-{
-     SDL_Log("SDL_GetDesktopDisplayMode failed: %s", SDL_GetError());
-     return 1;
-}
+      // filledEllipseRGBA(screen,
+      //                   60, 40,
+      //                   2, 15,
+      //                   0, 255, 0, 255);
 
-int w, h;
-w = dm.w;
-h = dm.h;
-cout << "w " << w << " hh " << h << endl;
-  
-  //Set up screen
-  screen = SDL_SetVideoMode(640, 480, 32, SDL_SWSURFACE);
+      // filledEllipseRGBA(screen,
+      //                   600, 400,
+      //                   25, 150,
+      //                   0, 255, 0, 255);
 
-  emscripten_set_main_loop(oneIter, 60, 1);
+  emscripten_set_main_loop(oneIter, 0, 1);
 }
 
 
@@ -39,7 +32,7 @@ cout << "w " << w << " hh " << h << endl;
  * One iteration of the main loop
  */
 void oneIter() {
-  handleInput();
+  // handleInput();
     // cout << "run..." << endl;
 }
 
@@ -52,5 +45,25 @@ void handleInput() {
       cout << "button pressed: " << e.type << endl;
   }
 }
+
+
+extern "C" void setDisplaySize(int width, int height) {
+  screen = SDL_SetVideoMode(width, height, 32, SDL_SWSURFACE);
+}
+
+
+
+//******************************************************************************************************************************
+// Debug functions.
+//******************************************************************************************************************************
+
+/**
+ * This is just for debugging calling functions from javascript.
+ */
+extern "C" void sayHello() {
+  cout << "I am saying hello.1" << endl;
+}
+
+
 
 
