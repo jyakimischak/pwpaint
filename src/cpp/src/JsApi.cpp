@@ -15,7 +15,8 @@ using namespace std;
  * Set the background color of the paint area.
  */
 extern "C" void setPaBackgroundColor(int r, int g, int b) {
-    paintAreaState.setBackgroundColor(Color(r, g, b, 255));
+    paintAreaState.backgroundColor = Color(r, g, b, 255);
+    paintAreaState.redraw = true;
 }
 
 /**
@@ -30,11 +31,29 @@ extern "C" void setStandardWidth(int width) {
  */
 extern "C" void setWindowSize(int width, int height) {
   cout << "setWindowSize" << endl;
-  paintAreaState.setWindowWidth(width);
-  paintAreaState.setWindowHeight(height);
+  paintAreaState.windowWidth = width;
+  paintAreaState.windowHeight = height;
+  paintAreaState.screenSizeChanged = true;
+  paintAreaState.redraw = true;
 
 //  screen = SDL_SetVideoMode(width, height, 32, SDL_SWSURFACE);
 }
+
+/**
+ * Set the default canvas size.
+ */
+extern "C" void setDefaultCanvasSize(int width, int height) {
+  defaultCanvasWidth = width;
+  defaultCanvasHeight = height;
+}
+
+/**
+ * Set the initial margin used when a new canvas is drawn.
+ */
+extern "C" void setInitialMargin(int margin) {
+    initialMargin = margin;
+}
+
 
 //******************************************************************************************************************************
 // Debug functions.

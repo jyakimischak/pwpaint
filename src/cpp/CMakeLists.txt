@@ -6,14 +6,19 @@ SET(CMAKE_C_COMPILER emcc)
 SET(CMAKE_CXX_COMPILER em++)
 #SET(CMAKE_CXX_STANDARD 11)
 
-STRING(CONCAT EXPORTED_FUNCTIONS "-s EXPORTED_FUNCTIONS=\"["
-    "'_main',"
-    "'_setStandardWidth',"
-    "'_setWindowSize',"
-    "'_sayHello',"
-    "'_drawDebug',"
-    "'_setPaBackgroundColor'"
-"]\"")
+STRING(CONCAT EXPORTED_FUNCTIONS "-s "
+    "EXPORTED_FUNCTIONS=\"["
+        "'_main', "
+        "'_setStandardWidth', "
+        "'_setWindowSize', "
+        "'_setDefaultCanvasSize', "
+        "'_setInitialMargin', "
+        "'_sayHello', "
+        "'_drawDebug', "
+        "'_setPaBackgroundColor' "
+    "]\" "
+#    "-s WASM=1 "
+)
 SET(CMAKE_CXX_FLAGS ${EXPORTED_FUNCTIONS})
 
 FILE(GLOB sources src/*.cpp)

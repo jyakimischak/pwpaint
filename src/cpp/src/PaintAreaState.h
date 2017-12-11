@@ -16,25 +16,18 @@
  */
 class PaintAreaState {
     public:
-        PaintAreaState();
-
-        void setBackgroundColor(Color backgroundColor);
-        Color getBackgroundColor();
-
-        void setWindowWidth(int width);
-        int getWindowWidth();
-
-        void setWindowHeight(int height);
-        int getWindowHeight();
-
-        void apply();
-    private:
+        bool screenSizeChanged;
+        bool redraw;
         Color backgroundColor;
-        bool backgroundColorDirty;
         int windowWidth;
-        bool windowWidthDirty;
         int windowHeight;
-        bool windowHeightDirty;
+        int canvasWidth;
+        int canvasHeight;
+        Color baseCanvasColor;
+
+        PaintAreaState();
+        void apply();
+        void drawCanvas();
 };
 extern PaintAreaState paintAreaState;
 
