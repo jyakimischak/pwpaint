@@ -8,9 +8,10 @@ SET(CMAKE_CXX_COMPILER em++)
 
 STRING(CONCAT EXPORTED_FUNCTIONS "-s EXPORTED_FUNCTIONS=\"["
     "'_main',"
+    "'_setStandardWidth',"
+    "'_setWindowSize',"
     "'_sayHello',"
     "'_drawDebug',"
-    "'_setDisplaySize',"
     "'_setPaBackgroundColor'"
 "]\"")
 SET(CMAKE_CXX_FLAGS ${EXPORTED_FUNCTIONS})

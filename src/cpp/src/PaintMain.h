@@ -6,6 +6,11 @@
 #ifndef PAINT_MAIN_H
 #define PAINT_MAIN_H
 
+#include <iostream>
+#include <SDL/SDL.h>
+#include "SDL_gfxPrimitives.h"
+#include <emscripten.h>
+
 
 class Color {
     public:
@@ -26,8 +31,5 @@ extern SDL_Surface* screen;
 void oneIter();
 void handleInput();
 
-extern "C" void setDisplaySize(int width, int height);
-extern "C" void sayHello();
-extern "C" void drawDebug();
 
 #endif

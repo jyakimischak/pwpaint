@@ -17,6 +17,7 @@ SDL_Surface* screen = NULL;
 SDL_Event e;
 
 
+
 /**
  * main function
  */
@@ -58,9 +59,6 @@ void handleInput() {
 }
 
 
-extern "C" void setDisplaySize(int width, int height) {
-  screen = SDL_SetVideoMode(width, height, 32, SDL_SWSURFACE);
-}
 
 //******************************************************************************************************************************
 // Color
@@ -80,23 +78,7 @@ Color::Color(int r, int g, int b, int a) {
   this->a = a;
 }
 
-//******************************************************************************************************************************
-// Debug functions.
-//******************************************************************************************************************************
 
-/**
- * This is just for debugging calling functions from javascript.
- */
-extern "C" void sayHello() {
-  cout << "I am saying hello.1" << endl;
-}
-
-extern "C" void drawDebug() {
-  filledEllipseRGBA(screen,
-                    600, 400,
-                    25, 150,
-                    0, 255, 0, 255);
-}
 
 
 
