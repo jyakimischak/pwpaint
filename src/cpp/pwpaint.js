@@ -7622,6 +7622,7 @@ function copyTempDouble(ptr) {
       return 0;
     }
 
+
   
   var SYSCALLS={DEFAULT_POLLMASK:5,mappings:{},umask:511,calculateAt:function (dirfd, path) {
         if (path[0] !== '/') {
@@ -7963,6 +7964,10 @@ function copyTempDouble(ptr) {
       SDL.DOMEventToSDLEvent['joystick_button_down'] = 0x603 /* SDL_JOYBUTTONDOWN */;
       SDL.DOMEventToSDLEvent['joystick_button_up'] = 0x604 /* SDL_JOYBUTTONUP */;
       return 0; // success
+    }
+
+  function _SDL_CreateRGBSurface(flags, width, height, depth, rmask, gmask, bmask, amask) {
+      return SDL.makeSurface(width, height, flags, false, 'CreateRGBSurface', rmask, gmask, bmask, amask);
     }
 
    
@@ -8404,7 +8409,7 @@ function invoke_viiii(index,a1,a2,a3,a4) {
 
 Module.asmGlobalArg = { "Math": Math, "Int8Array": Int8Array, "Int16Array": Int16Array, "Int32Array": Int32Array, "Uint8Array": Uint8Array, "Uint16Array": Uint16Array, "Uint32Array": Uint32Array, "Float32Array": Float32Array, "Float64Array": Float64Array, "NaN": NaN, "Infinity": Infinity };
 
-Module.asmLibraryArg = { "abort": abort, "assert": assert, "enlargeMemory": enlargeMemory, "getTotalMemory": getTotalMemory, "abortOnCannotGrowMemory": abortOnCannotGrowMemory, "abortStackOverflow": abortStackOverflow, "nullFunc_iiiiiiii": nullFunc_iiiiiiii, "nullFunc_viiiii": nullFunc_viiiii, "nullFunc_iiiiiid": nullFunc_iiiiiid, "nullFunc_vi": nullFunc_vi, "nullFunc_vii": nullFunc_vii, "nullFunc_iiiiiiiiiii": nullFunc_iiiiiiiiiii, "nullFunc_ii": nullFunc_ii, "nullFunc_iiiiiiiiiiii": nullFunc_iiiiiiiiiiii, "nullFunc_iiii": nullFunc_iiii, "nullFunc_viiiiiiiiiiiiiii": nullFunc_viiiiiiiiiiiiiii, "nullFunc_viiiiii": nullFunc_viiiiii, "nullFunc_iiiiiii": nullFunc_iiiiiii, "nullFunc_iiiiiiiiiiiii": nullFunc_iiiiiiiiiiiii, "nullFunc_viiiiiii": nullFunc_viiiiiii, "nullFunc_viiiiiiiiii": nullFunc_viiiiiiiiii, "nullFunc_iii": nullFunc_iii, "nullFunc_iiiiii": nullFunc_iiiiii, "nullFunc_diii": nullFunc_diii, "nullFunc_i": nullFunc_i, "nullFunc_iiiii": nullFunc_iiiii, "nullFunc_viii": nullFunc_viii, "nullFunc_v": nullFunc_v, "nullFunc_iiiiiiiii": nullFunc_iiiiiiiii, "nullFunc_iiiiid": nullFunc_iiiiid, "nullFunc_viiii": nullFunc_viiii, "invoke_iiiiiiii": invoke_iiiiiiii, "invoke_viiiii": invoke_viiiii, "invoke_iiiiiid": invoke_iiiiiid, "invoke_vi": invoke_vi, "invoke_vii": invoke_vii, "invoke_iiiiiiiiiii": invoke_iiiiiiiiiii, "invoke_ii": invoke_ii, "invoke_iiiiiiiiiiii": invoke_iiiiiiiiiiii, "invoke_iiii": invoke_iiii, "invoke_viiiiiiiiiiiiiii": invoke_viiiiiiiiiiiiiii, "invoke_viiiiii": invoke_viiiiii, "invoke_iiiiiii": invoke_iiiiiii, "invoke_iiiiiiiiiiiii": invoke_iiiiiiiiiiiii, "invoke_viiiiiii": invoke_viiiiiii, "invoke_viiiiiiiiii": invoke_viiiiiiiiii, "invoke_iii": invoke_iii, "invoke_iiiiii": invoke_iiiiii, "invoke_diii": invoke_diii, "invoke_i": invoke_i, "invoke_iiiii": invoke_iiiii, "invoke_viii": invoke_viii, "invoke_v": invoke_v, "invoke_iiiiiiiii": invoke_iiiiiiiii, "invoke_iiiiid": invoke_iiiiid, "invoke_viiii": invoke_viiii, "_Mix_LoadWAV_RW": _Mix_LoadWAV_RW, "_pthread_cond_wait": _pthread_cond_wait, "___lock": ___lock, "_putenv": _putenv, "__ZSt18uncaught_exceptionv": __ZSt18uncaught_exceptionv, "___syscall54": ___syscall54, "_IMG_Load": _IMG_Load, "_abort": _abort, "_TTF_FontHeight": _TTF_FontHeight, "_SDL_CloseAudio": _SDL_CloseAudio, "_emscripten_set_main_loop_timing": _emscripten_set_main_loop_timing, "_SDL_GetTicks": _SDL_GetTicks, "___gxx_personality_v0": ___gxx_personality_v0, "___cxa_find_matching_catch_4": ___cxa_find_matching_catch_4, "___assert_fail": ___assert_fail, "___cxa_free_exception": ___cxa_free_exception, "___cxa_allocate_exception": ___cxa_allocate_exception, "___cxa_find_matching_catch": ___cxa_find_matching_catch, "_strftime": _strftime, "___buildEnvironment": ___buildEnvironment, "___cxa_find_matching_catch_2": ___cxa_find_matching_catch_2, "__addDays": __addDays, "_SDL_LockSurface": _SDL_LockSurface, "_strftime_l": _strftime_l, "___setErrNo": ___setErrNo, "_filledEllipseRGBA": _filledEllipseRGBA, "_SDL_Init": _SDL_Init, "___cxa_begin_catch": ___cxa_begin_catch, "_TTF_RenderText_Solid": _TTF_RenderText_Solid, "___cxa_end_catch": ___cxa_end_catch, "___resumeException": ___resumeException, "___cxa_find_matching_catch_3": ___cxa_find_matching_catch_3, "_IMG_Load_RW": _IMG_Load_RW, "_pthread_getspecific": _pthread_getspecific, "_Mix_PlayMusic": _Mix_PlayMusic, "__arraySum": __arraySum, "_emscripten_memcpy_big": _emscripten_memcpy_big, "___syscall91": ___syscall91, "_SDL_PauseAudio": _SDL_PauseAudio, "_SDL_FillRect": _SDL_FillRect, "_atexit": _atexit, "_pthread_once": _pthread_once, "_TTF_SizeText": _TTF_SizeText, "___map_file": ___map_file, "_pthread_key_create": _pthread_key_create, "___unlock": ___unlock, "___syscall140": ___syscall140, "__isLeapYear": __isLeapYear, "_emscripten_set_main_loop": _emscripten_set_main_loop, "_Mix_PlayChannel": _Mix_PlayChannel, "_emscripten_get_now": _emscripten_get_now, "_SDL_UpperBlit": _SDL_UpperBlit, "_SDL_MapRGB": _SDL_MapRGB, "_pthread_setspecific": _pthread_setspecific, "___cxa_atexit": ___cxa_atexit, "_getenv": _getenv, "___cxa_throw": ___cxa_throw, "___cxa_rethrow": ___cxa_rethrow, "_SDL_SetVideoMode": _SDL_SetVideoMode, "___syscall6": ___syscall6, "_Mix_FreeChunk": _Mix_FreeChunk, "_Mix_HaltMusic": _Mix_HaltMusic, "_SDL_FreeRW": _SDL_FreeRW, "_SDL_UpperBlitScaled": _SDL_UpperBlitScaled, "_SDL_RWFromConstMem": _SDL_RWFromConstMem, "___syscall145": ___syscall145, "___syscall146": ___syscall146, "_SDL_RWFromFile": _SDL_RWFromFile, "DYNAMICTOP_PTR": DYNAMICTOP_PTR, "tempDoublePtr": tempDoublePtr, "ABORT": ABORT, "STACKTOP": STACKTOP, "STACK_MAX": STACK_MAX, "cttz_i8": cttz_i8, "___dso_handle": ___dso_handle };
+Module.asmLibraryArg = { "abort": abort, "assert": assert, "enlargeMemory": enlargeMemory, "getTotalMemory": getTotalMemory, "abortOnCannotGrowMemory": abortOnCannotGrowMemory, "abortStackOverflow": abortStackOverflow, "nullFunc_iiiiiiii": nullFunc_iiiiiiii, "nullFunc_viiiii": nullFunc_viiiii, "nullFunc_iiiiiid": nullFunc_iiiiiid, "nullFunc_vi": nullFunc_vi, "nullFunc_vii": nullFunc_vii, "nullFunc_iiiiiiiiiii": nullFunc_iiiiiiiiiii, "nullFunc_ii": nullFunc_ii, "nullFunc_iiiiiiiiiiii": nullFunc_iiiiiiiiiiii, "nullFunc_iiii": nullFunc_iiii, "nullFunc_viiiiiiiiiiiiiii": nullFunc_viiiiiiiiiiiiiii, "nullFunc_viiiiii": nullFunc_viiiiii, "nullFunc_iiiiiii": nullFunc_iiiiiii, "nullFunc_iiiiiiiiiiiii": nullFunc_iiiiiiiiiiiii, "nullFunc_viiiiiii": nullFunc_viiiiiii, "nullFunc_viiiiiiiiii": nullFunc_viiiiiiiiii, "nullFunc_iii": nullFunc_iii, "nullFunc_iiiiii": nullFunc_iiiiii, "nullFunc_diii": nullFunc_diii, "nullFunc_i": nullFunc_i, "nullFunc_iiiii": nullFunc_iiiii, "nullFunc_viii": nullFunc_viii, "nullFunc_v": nullFunc_v, "nullFunc_iiiiiiiii": nullFunc_iiiiiiiii, "nullFunc_iiiiid": nullFunc_iiiiid, "nullFunc_viiii": nullFunc_viiii, "invoke_iiiiiiii": invoke_iiiiiiii, "invoke_viiiii": invoke_viiiii, "invoke_iiiiiid": invoke_iiiiiid, "invoke_vi": invoke_vi, "invoke_vii": invoke_vii, "invoke_iiiiiiiiiii": invoke_iiiiiiiiiii, "invoke_ii": invoke_ii, "invoke_iiiiiiiiiiii": invoke_iiiiiiiiiiii, "invoke_iiii": invoke_iiii, "invoke_viiiiiiiiiiiiiii": invoke_viiiiiiiiiiiiiii, "invoke_viiiiii": invoke_viiiiii, "invoke_iiiiiii": invoke_iiiiiii, "invoke_iiiiiiiiiiiii": invoke_iiiiiiiiiiiii, "invoke_viiiiiii": invoke_viiiiiii, "invoke_viiiiiiiiii": invoke_viiiiiiiiii, "invoke_iii": invoke_iii, "invoke_iiiiii": invoke_iiiiii, "invoke_diii": invoke_diii, "invoke_i": invoke_i, "invoke_iiiii": invoke_iiiii, "invoke_viii": invoke_viii, "invoke_v": invoke_v, "invoke_iiiiiiiii": invoke_iiiiiiiii, "invoke_iiiiid": invoke_iiiiid, "invoke_viiii": invoke_viiii, "_Mix_LoadWAV_RW": _Mix_LoadWAV_RW, "_pthread_cond_wait": _pthread_cond_wait, "___lock": ___lock, "_putenv": _putenv, "__ZSt18uncaught_exceptionv": __ZSt18uncaught_exceptionv, "___syscall54": ___syscall54, "_IMG_Load": _IMG_Load, "_abort": _abort, "_TTF_FontHeight": _TTF_FontHeight, "_SDL_CloseAudio": _SDL_CloseAudio, "_emscripten_set_main_loop_timing": _emscripten_set_main_loop_timing, "_SDL_GetTicks": _SDL_GetTicks, "___gxx_personality_v0": ___gxx_personality_v0, "___cxa_find_matching_catch_4": ___cxa_find_matching_catch_4, "___assert_fail": ___assert_fail, "___cxa_free_exception": ___cxa_free_exception, "___cxa_allocate_exception": ___cxa_allocate_exception, "___cxa_find_matching_catch": ___cxa_find_matching_catch, "_strftime": _strftime, "___buildEnvironment": ___buildEnvironment, "___cxa_find_matching_catch_2": ___cxa_find_matching_catch_2, "__addDays": __addDays, "_SDL_LockSurface": _SDL_LockSurface, "_strftime_l": _strftime_l, "___setErrNo": ___setErrNo, "_filledEllipseRGBA": _filledEllipseRGBA, "_SDL_Init": _SDL_Init, "___cxa_begin_catch": ___cxa_begin_catch, "_TTF_RenderText_Solid": _TTF_RenderText_Solid, "___cxa_end_catch": ___cxa_end_catch, "___resumeException": ___resumeException, "___cxa_find_matching_catch_3": ___cxa_find_matching_catch_3, "_IMG_Load_RW": _IMG_Load_RW, "_pthread_getspecific": _pthread_getspecific, "_Mix_PlayMusic": _Mix_PlayMusic, "__arraySum": __arraySum, "_emscripten_memcpy_big": _emscripten_memcpy_big, "___syscall91": ___syscall91, "_SDL_PauseAudio": _SDL_PauseAudio, "_SDL_FillRect": _SDL_FillRect, "_atexit": _atexit, "_pthread_once": _pthread_once, "_TTF_SizeText": _TTF_SizeText, "___map_file": ___map_file, "_pthread_key_create": _pthread_key_create, "___unlock": ___unlock, "___syscall140": ___syscall140, "__isLeapYear": __isLeapYear, "_emscripten_set_main_loop": _emscripten_set_main_loop, "_Mix_PlayChannel": _Mix_PlayChannel, "_emscripten_get_now": _emscripten_get_now, "_SDL_UpperBlit": _SDL_UpperBlit, "_SDL_MapRGB": _SDL_MapRGB, "_SDL_CreateRGBSurface": _SDL_CreateRGBSurface, "_pthread_setspecific": _pthread_setspecific, "___cxa_atexit": ___cxa_atexit, "_getenv": _getenv, "___cxa_throw": ___cxa_throw, "___cxa_rethrow": ___cxa_rethrow, "_SDL_SetVideoMode": _SDL_SetVideoMode, "___syscall6": ___syscall6, "_Mix_FreeChunk": _Mix_FreeChunk, "_Mix_HaltMusic": _Mix_HaltMusic, "_SDL_FreeRW": _SDL_FreeRW, "_SDL_UpperBlitScaled": _SDL_UpperBlitScaled, "_SDL_RWFromConstMem": _SDL_RWFromConstMem, "___syscall145": ___syscall145, "___syscall146": ___syscall146, "_SDL_RWFromFile": _SDL_RWFromFile, "DYNAMICTOP_PTR": DYNAMICTOP_PTR, "tempDoublePtr": tempDoublePtr, "ABORT": ABORT, "STACKTOP": STACKTOP, "STACK_MAX": STACK_MAX, "cttz_i8": cttz_i8, "___dso_handle": ___dso_handle };
 // EMSCRIPTEN_START_ASM
 var asm = (function(global, env, buffer) {
 'almost asm';
@@ -8562,6 +8567,7 @@ var asm = (function(global, env, buffer) {
   var _emscripten_get_now=env._emscripten_get_now;
   var _SDL_UpperBlit=env._SDL_UpperBlit;
   var _SDL_MapRGB=env._SDL_MapRGB;
+  var _SDL_CreateRGBSurface=env._SDL_CreateRGBSurface;
   var _pthread_setspecific=env._pthread_setspecific;
   var ___cxa_atexit=env.___cxa_atexit;
   var _getenv=env._getenv;
@@ -9630,76 +9636,81 @@ function __ZN14PaintAreaState5applyEv($0) {
  $0 = $0|0;
  var $1 = 0, $10 = 0, $11 = 0, $12 = 0, $13 = 0, $14 = 0, $15 = 0, $16 = 0, $17 = 0, $18 = 0, $19 = 0, $2 = 0, $20 = 0, $21 = 0, $22 = 0, $23 = 0, $24 = 0, $25 = 0, $26 = 0, $27 = 0;
  var $28 = 0, $29 = 0, $3 = 0, $30 = 0, $31 = 0, $32 = 0, $33 = 0, $34 = 0, $35 = 0, $36 = 0, $37 = 0, $38 = 0, $39 = 0, $4 = 0, $40 = 0, $41 = 0, $42 = 0, $43 = 0, $44 = 0, $45 = 0;
- var $46 = 0, $47 = 0, $48 = 0, $49 = 0, $5 = 0, $50 = 0, $51 = 0, $52 = 0, $53 = 0, $54 = 0, $55 = 0, $6 = 0, $7 = 0, $8 = 0, $9 = 0, label = 0, sp = 0;
+ var $46 = 0, $47 = 0, $48 = 0, $49 = 0, $5 = 0, $50 = 0, $51 = 0, $52 = 0, $53 = 0, $54 = 0, $55 = 0, $56 = 0, $57 = 0, $6 = 0, $7 = 0, $8 = 0, $9 = 0, label = 0, sp = 0;
  sp = STACKTOP;
- STACKTOP = STACKTOP + 32|0; if ((STACKTOP|0) >= (STACK_MAX|0)) abortStackOverflow(32|0);
+ STACKTOP = STACKTOP + 48|0; if ((STACKTOP|0) >= (STACK_MAX|0)) abortStackOverflow(48|0);
+ $7 = sp;
  $5 = $0;
- $6 = $5;
- $7 = HEAP8[$6>>0]|0;
- $8 = $7&1;
- if ($8) {
-  HEAP8[$6>>0] = 0;
-  $9 = (__ZNSt3__2lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(18648,10310)|0);
-  $10 = ((($6)) + 20|0);
-  $11 = HEAP32[$10>>2]|0;
-  $12 = (__ZNSt3__213basic_ostreamIcNS_11char_traitsIcEEElsEi($9,$11)|0);
-  $13 = (__ZNSt3__2lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc($12,10344)|0);
-  $14 = ((($6)) + 24|0);
-  $15 = HEAP32[$14>>2]|0;
-  $16 = (__ZNSt3__213basic_ostreamIcNS_11char_traitsIcEEElsEi($13,$15)|0);
-  $3 = $16;
+ $8 = $5;
+ $9 = HEAP8[$8>>0]|0;
+ $10 = $9&1;
+ if ($10) {
+  HEAP8[$8>>0] = 0;
+  $11 = (__ZNSt3__2lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(18648,10310)|0);
+  $12 = ((($8)) + 20|0);
+  $13 = HEAP32[$12>>2]|0;
+  $14 = (__ZNSt3__213basic_ostreamIcNS_11char_traitsIcEEElsEi($11,$13)|0);
+  $15 = (__ZNSt3__2lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc($14,10344)|0);
+  $16 = ((($8)) + 24|0);
+  $17 = HEAP32[$16>>2]|0;
+  $18 = (__ZNSt3__213basic_ostreamIcNS_11char_traitsIcEEElsEi($15,$17)|0);
+  $3 = $18;
   $4 = 359;
-  $17 = $3;
-  $18 = $4;
-  (FUNCTION_TABLE_ii[$18 & 1023]($17)|0);
-  $19 = ((($6)) + 20|0);
-  $20 = HEAP32[$19>>2]|0;
-  $21 = ((($6)) + 24|0);
+  $19 = $3;
+  $20 = $4;
+  (FUNCTION_TABLE_ii[$20 & 1023]($19)|0);
+  $21 = ((($8)) + 20|0);
   $22 = HEAP32[$21>>2]|0;
-  $23 = (_SDL_SetVideoMode(($20|0),($22|0),32,0)|0);
-  HEAP32[4463] = $23;
+  $23 = ((($8)) + 24|0);
+  $24 = HEAP32[$23>>2]|0;
+  $25 = (_SDL_SetVideoMode(($22|0),($24|0),32,0)|0);
+  HEAP32[4463] = $25;
  }
- $24 = ((($6)) + 1|0);
- $25 = HEAP8[$24>>0]|0;
- $26 = $25&1;
- if (!($26)) {
+ $26 = ((($8)) + 1|0);
+ $27 = HEAP8[$26>>0]|0;
+ $28 = $27&1;
+ if (!($28)) {
   STACKTOP = sp;return;
  }
- $27 = ((($6)) + 1|0);
- HEAP8[$27>>0] = 0;
- $28 = (__ZNSt3__2lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(18648,10347)|0);
- $1 = $28;
+ $29 = ((($8)) + 1|0);
+ HEAP8[$29>>0] = 0;
+ $30 = (__ZNSt3__2lsINS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc(18648,10347)|0);
+ $1 = $30;
  $2 = 359;
- $29 = $1;
- $30 = $2;
- (FUNCTION_TABLE_ii[$30 & 1023]($29)|0);
- $31 = HEAP32[4463]|0;
- $32 = HEAP32[4463]|0;
- $33 = ((($32)) + 4|0);
- $34 = HEAP32[$33>>2]|0;
- $35 = ((($6)) + 4|0);
+ $31 = $1;
+ $32 = $2;
+ (FUNCTION_TABLE_ii[$32 & 1023]($31)|0);
+ $33 = HEAP32[4463]|0;
+ $34 = HEAP32[4463]|0;
+ $35 = ((($34)) + 4|0);
  $36 = HEAP32[$35>>2]|0;
- $37 = $36&255;
- $38 = ((($6)) + 4|0);
- $39 = ((($38)) + 4|0);
- $40 = HEAP32[$39>>2]|0;
- $41 = $40&255;
- $42 = ((($6)) + 4|0);
- $43 = ((($42)) + 8|0);
- $44 = HEAP32[$43>>2]|0;
- $45 = $44&255;
- $46 = (_SDL_MapRGB(($34|0),($37|0),($41|0),($45|0))|0);
- (_SDL_FillRect(($31|0),(0|0),($46|0))|0);
- $47 = HEAP32[4463]|0;
- $48 = ((($6)) + 20|0);
- $49 = HEAP32[$48>>2]|0;
- $50 = (($49|0) / 2)&-1;
- $51 = $50&65535;
- $52 = ((($6)) + 24|0);
+ $37 = ((($8)) + 4|0);
+ $38 = HEAP32[$37>>2]|0;
+ $39 = $38&255;
+ $40 = ((($8)) + 4|0);
+ $41 = ((($40)) + 4|0);
+ $42 = HEAP32[$41>>2]|0;
+ $43 = $42&255;
+ $44 = ((($8)) + 4|0);
+ $45 = ((($44)) + 8|0);
+ $46 = HEAP32[$45>>2]|0;
+ $47 = $46&255;
+ $48 = (_SDL_MapRGB(($36|0),($39|0),($43|0),($47|0))|0);
+ (_SDL_FillRect(($33|0),(0|0),($48|0))|0);
+ $49 = (_SDL_CreateRGBSurface(0,100,100,32,0,0,0,100)|0);
+ $6 = $49;
+ $50 = $6;
+ $51 = $6;
+ $52 = ((($51)) + 4|0);
  $53 = HEAP32[$52>>2]|0;
- $54 = (($53|0) / 2)&-1;
- $55 = $54&65535;
- (_filledEllipseRGBA(($47|0),($51|0),($55|0),25,25,0,-1,0,-1)|0);
+ $54 = (_SDL_MapRGB(($53|0),-1,-1,-1)|0);
+ (_SDL_FillRect(($50|0),(0|0),($54|0))|0);
+ HEAP32[$7>>2] = 0;
+ $55 = ((($7)) + 4|0);
+ HEAP32[$55>>2] = 0;
+ $56 = $6;
+ $57 = HEAP32[4463]|0;
+ (_SDL_UpperBlit(($56|0),(0|0),($57|0),($7|0))|0);
  STACKTOP = sp;return;
 }
 function _main($0,$1) {
