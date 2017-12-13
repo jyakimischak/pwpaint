@@ -150,6 +150,33 @@ src/JsApi.cpp.s:
 	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/JsApi.cpp.s
 .PHONY : src/JsApi.cpp.s
 
+src/Layers.o: src/Layers.cpp.o
+
+.PHONY : src/Layers.o
+
+# target to build an object file
+src/Layers.cpp.o:
+	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/Layers.cpp.o
+.PHONY : src/Layers.cpp.o
+
+src/Layers.i: src/Layers.cpp.i
+
+.PHONY : src/Layers.i
+
+# target to preprocess a source file
+src/Layers.cpp.i:
+	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/Layers.cpp.i
+.PHONY : src/Layers.cpp.i
+
+src/Layers.s: src/Layers.cpp.s
+
+.PHONY : src/Layers.s
+
+# target to generate assembly for a file
+src/Layers.cpp.s:
+	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/Layers.cpp.s
+.PHONY : src/Layers.cpp.s
+
 src/PaintAreaState.o: src/PaintAreaState.cpp.o
 
 .PHONY : src/PaintAreaState.o
@@ -204,6 +231,33 @@ src/PaintMain.cpp.s:
 	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/PaintMain.cpp.s
 .PHONY : src/PaintMain.cpp.s
 
+src/PaintUtil.o: src/PaintUtil.cpp.o
+
+.PHONY : src/PaintUtil.o
+
+# target to build an object file
+src/PaintUtil.cpp.o:
+	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/PaintUtil.cpp.o
+.PHONY : src/PaintUtil.cpp.o
+
+src/PaintUtil.i: src/PaintUtil.cpp.i
+
+.PHONY : src/PaintUtil.i
+
+# target to preprocess a source file
+src/PaintUtil.cpp.i:
+	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/PaintUtil.cpp.i
+.PHONY : src/PaintUtil.cpp.i
+
+src/PaintUtil.s: src/PaintUtil.cpp.s
+
+.PHONY : src/PaintUtil.s
+
+# target to generate assembly for a file
+src/PaintUtil.cpp.s:
+	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/PaintUtil.cpp.s
+.PHONY : src/PaintUtil.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -216,12 +270,18 @@ help:
 	@echo "... src/JsApi.o"
 	@echo "... src/JsApi.i"
 	@echo "... src/JsApi.s"
+	@echo "... src/Layers.o"
+	@echo "... src/Layers.i"
+	@echo "... src/Layers.s"
 	@echo "... src/PaintAreaState.o"
 	@echo "... src/PaintAreaState.i"
 	@echo "... src/PaintAreaState.s"
 	@echo "... src/PaintMain.o"
 	@echo "... src/PaintMain.i"
 	@echo "... src/PaintMain.s"
+	@echo "... src/PaintUtil.o"
+	@echo "... src/PaintUtil.i"
+	@echo "... src/PaintUtil.s"
 .PHONY : help
 
 

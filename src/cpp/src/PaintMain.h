@@ -9,18 +9,13 @@
 #include <iostream>
 #include <SDL/SDL.h>
 #include "SDL_gfxPrimitives.h"
+#include <unistd.h>
 #include <emscripten.h>
+#include "PaintUtil.h"
+#include "PaintAreaState.h"
+#include "Layers.h"
 
 
-class Color {
-    public:
-        int r;
-        int g;
-        int b;
-        int a;
-        Color();
-        Color(int r, int g, int b, int a);
-};
 
 extern SDL_Surface* screen;
 

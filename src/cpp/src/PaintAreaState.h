@@ -10,6 +10,10 @@
 #include <SDL/SDL.h>
 #include "SDL_gfxPrimitives.h"
 #include <emscripten.h>
+#include "PaintUtil.h"
+#include "Layers.h"
+
+extern SDL_Surface* screen;
 
 /**
  * That state that is held and interacted with for the paint area.
@@ -23,9 +27,12 @@ class PaintAreaState {
         int windowHeight;
         int canvasWidth;
         int canvasHeight;
-        Color baseCanvasColor;
+
+        Layers layers;
 
         PaintAreaState();
+        void newDrawing();
+        void newDrawing(int width, int height);
         void apply();
         void drawCanvas();
 };

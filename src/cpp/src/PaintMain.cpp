@@ -4,12 +4,7 @@
 // Author: Jonas Yakimischak - Poorwill Games
 //******************************************************
 
-#include <iostream>
-#include <SDL/SDL.h>
-#include "SDL_gfxPrimitives.h"
-#include <emscripten.h>
 #include "PaintMain.h"
-#include "PaintAreaState.h"
 
 using namespace std;
 
@@ -17,6 +12,7 @@ SDL_Surface* screen = NULL;
 SDL_Event e;
 
 
+bool hasBeenInitialized = false;
 
 /**
  * main function
@@ -43,6 +39,10 @@ extern "C" int main(int argc, char * argv[]) {
  * One iteration of the main loop
  */
 void oneIter() {
+  if(!hasBeenInitialized) {
+    return;
+  }
+
   // handleInput();
     // cout << "run..." << endl;
   paintAreaState.apply();
@@ -59,24 +59,6 @@ void handleInput() {
 }
 
 
-
-//******************************************************************************************************************************
-// Color
-//******************************************************************************************************************************
-
-Color::Color() {
-  r = 0;
-  g = 0;
-  b = 0;
-  a = 255;
-}
-
-Color::Color(int r, int g, int b, int a) {
-  this->r = r;
-  this->g = g;
-  this->b = b;
-  this->a = a;
-}
 
 
 

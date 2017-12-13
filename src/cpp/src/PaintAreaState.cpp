@@ -4,7 +4,6 @@
 // Author: Jonas Yakimischak - Poorwill Games
 //******************************************************
 
-#include "PaintMain.h"
 #include "PaintAreaState.h"
 
 using namespace std;
@@ -16,7 +15,6 @@ int initialMargin = 0;
 PaintAreaState paintAreaState;
 
 
-
 //***********************************************************************************************
 // PaintAreaState
 //***********************************************************************************************
@@ -26,8 +24,27 @@ PaintAreaState::PaintAreaState() {
     redraw = false;
     canvasWidth = defaultCanvasWidth;
     canvasHeight = defaultCanvasHeight;
-    baseCanvasColor = Color(255, 255, 255, 255);
 }
+
+
+/**
+ * Start up a new drawing, with all the defaults.
+ */
+void PaintAreaState::newDrawing() {
+    newDrawing(defaultCanvasWidth, defaultCanvasHeight);
+}
+
+/**
+ * Start up a new drawing, with given dimensions.
+ */
+void PaintAreaState::newDrawing(int width, int height) {
+    cout << "New drawing" << endl;
+    redraw = false;
+    canvasWidth = width;
+    canvasHeight = height;
+    layers.newDrawing();
+}
+
 
 /**
  * Apply dirty properties to the paint area.
@@ -46,21 +63,6 @@ void PaintAreaState::apply() {
         //                     windowWidth / 2, windowHeight / 2,
         //                     25, 25,
         //                     0, 255, 0, 255);
-        SDL_Surface* s = SDL_CreateRGBSurface (
-            0, // Uint32 flags,
-            100, // int    width,
-            100, // int    height,
-            32, // int    depth,
-            0, // Uint32 Rmask,
-            0, // Uint32 Gmask,
-            0, // Uint32 Bmask,
-            100  // Uint32 Amask
-        );
-        SDL_FillRect(s, NULL, SDL_MapRGB(s->format, 255, 255, 255));
-        SDL_Rect offsets;
-        offsets.x=0;
-        offsets.y=0;
-        SDL_BlitSurface(s,NULL,screen,&offsets);
     }
 }
 

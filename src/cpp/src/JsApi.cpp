@@ -4,12 +4,19 @@
 // Author: Jonas Yakimischak - Poorwill Games
 //******************************************************
 
-#include <iostream>
-#include "PaintMain.h"
-#include "PaintAreaState.h"
 #include "JsApi.h"
 
 using namespace std;
+
+/**
+ * Setup everything and away we go.
+ * Should be called from JS after any setters for global functions are called.
+ */
+extern "C" void init() {
+  paintAreaState.newDrawing();
+  hasBeenInitialized = true;
+  cout << "Initialized..." << endl;
+}
 
 /**
  * Set the background color of the paint area.
@@ -45,6 +52,11 @@ extern "C" void setWindowSize(int width, int height) {
 extern "C" void setDefaultCanvasSize(int width, int height) {
   defaultCanvasWidth = width;
   defaultCanvasHeight = height;
+  //if the canvas size has not yet been set then set it to the default
+
+  if(paintAreaState.canvasWidth == 0) {
+    setCanvasSize(width, height);
+  }
 }
 
 /**
@@ -54,6 +66,20 @@ extern "C" void setInitialMargin(int margin) {
     initialMargin = margin;
 }
 
+/**
+ * Sets the canvas size.
+ */
+extern "C" void setCanvasSize(int width, int height) {
+  paintAreaState.canvasWidth = width;
+  paintAreaState.canvasHeight = height;
+}
+
+/**
+ * Set the color for the base layer, no alpha.
+ */
+extern "C" void setDefaultBaseLayerColor(int r, int g, int b) {
+  defaultBaseLayerColor = Color(r, g, b, 255);
+}
 
 //******************************************************************************************************************************
 // Debug functions.
@@ -63,16 +89,16 @@ extern "C" void setInitialMargin(int margin) {
  * This is just for debugging calling functions from javascript.
  */
 extern "C" void sayHello() {
-  cout << "I am saying hello.1" << endl;
+  cout << "I am saying hello." << endl;
 }
 
 /**
  * Draw something to the screen.
  */
 extern "C" void drawDebug() {
-  filledEllipseRGBA(screen,
-                    600, 400,
-                    25, 150,
-                    0, 255, 0, 255);
+  // filledEllipseRGBA(screen,
+  //                   600, 400,
+  //                   25, 150,
+  //                   0, 255, 0, 255);
 }
 
