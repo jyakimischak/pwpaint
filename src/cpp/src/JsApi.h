@@ -8,12 +8,11 @@
 #define JS_API_H
 
 #include <iostream>
-#include <SDL/SDL.h>
-#include "SDL_gfxPrimitives.h"
+#include <SDL2/SDL.h>
+// #include "SDL_gfxPrimitives.h"
 #include <emscripten.h>
 #include "PaintUtil.h"
 #include "PaintAreaState.h"
-#include "Layers.h"
 
 extern bool hasBeenInitialized;
 extern int standardWidth;
@@ -21,7 +20,6 @@ extern int defaultCanvasWidth;
 extern int defaultCanvasHeight;
 extern int initialMargin;
 extern Color defaultBaseLayerColor;
-extern PaintAreaState paintAreaState;
 
 extern "C" void init();
 extern "C" void setPaBackgroundColor(int r, int g, int b);

@@ -8,8 +8,8 @@
 #define PAINT_UTIL_H
 
 #include <iostream>
-#include <SDL/SDL.h>
-#include "SDL_gfxPrimitives.h"
+#include <SDL2/SDL.h>
+// #include "SDL_gfxPrimitives.h"
 #include <unistd.h>
 #include <emscripten.h>
 

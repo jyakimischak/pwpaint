@@ -7,14 +7,12 @@
 #define PAINT_MAIN_H
 
 #include <iostream>
-#include <SDL/SDL.h>
-#include "SDL_gfxPrimitives.h"
+#include <SDL2/SDL.h>
+// #include "SDL_gfxPrimitives.h"
 #include <unistd.h>
 #include <emscripten.h>
 #include "PaintUtil.h"
 #include "PaintAreaState.h"
-#include "Layers.h"
-
 
 
 extern SDL_Surface* screen;

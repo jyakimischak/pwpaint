@@ -22,8 +22,7 @@ extern "C" void init() {
  * Set the background color of the paint area.
  */
 extern "C" void setPaBackgroundColor(int r, int g, int b) {
-    paintAreaState.backgroundColor = Color(r, g, b, 255);
-    paintAreaState.redraw = true;
+    defaultBaseLayerColor = Color(r, g, b, 255);
 }
 
 /**
