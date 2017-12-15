@@ -49,7 +49,7 @@ void PaintAreaState::newDrawing(int width, int height) {
     canvasHeight = height;
 
     baseLayerColor = defaultBaseLayerColor;
-    baseLayerSurface = SDL_CreateRGBSurface (
+    baseLayerSurfacePtr = SDL_CreateRGBSurface (
         0, // Uint32 flags,
         100,
         100,
@@ -72,7 +72,7 @@ void PaintAreaState::apply() {
         screenSizeChanged = false;
         cout << "Updating window width and height " << windowWidth << ", " << windowHeight << endl;
         // screen = SDL_SetVideoMode(windowWidth, windowHeight, 32, SDL_SWSURFACE);
-        SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, backgroundColor.r, backgroundColor.g, backgroundColor.b));
+        SDL_FillRect(screenPtr, NULL, SDL_MapRGB(screenPtr->format, backgroundColor.r, backgroundColor.g, backgroundColor.b));
     }
     if(redraw) {
         redraw = false;
@@ -91,11 +91,11 @@ void PaintAreaState::apply() {
  * Draw all the layers of the canvas.
  */
 void PaintAreaState::drawCanvas() {
-    SDL_FillRect(baseLayerSurface, NULL, SDL_MapRGB(baseLayerSurface->format, 255, 255, 255));
+    SDL_FillRect(baseLayerSurfacePtr, NULL, SDL_MapRGB(baseLayerSurfacePtr->format, 255, 255, 255));
     SDL_Rect offsets;
     offsets.x=0;
     offsets.y=0;
-    SDL_BlitSurface(baseLayerSurface, NULL, screen, &offsets);
+    SDL_BlitSurface(baseLayerSurfacePtr, NULL, screenPtr, &offsets);
 }
 
 

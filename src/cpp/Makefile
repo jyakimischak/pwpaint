@@ -123,6 +123,33 @@ pwpaint.html/fast:
 	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/build
 .PHONY : pwpaint.html/fast
 
+src/Brushes.o: src/Brushes.cpp.o
+
+.PHONY : src/Brushes.o
+
+# target to build an object file
+src/Brushes.cpp.o:
+	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/Brushes.cpp.o
+.PHONY : src/Brushes.cpp.o
+
+src/Brushes.i: src/Brushes.cpp.i
+
+.PHONY : src/Brushes.i
+
+# target to preprocess a source file
+src/Brushes.cpp.i:
+	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/Brushes.cpp.i
+.PHONY : src/Brushes.cpp.i
+
+src/Brushes.s: src/Brushes.cpp.s
+
+.PHONY : src/Brushes.s
+
+# target to generate assembly for a file
+src/Brushes.cpp.s:
+	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/Brushes.cpp.s
+.PHONY : src/Brushes.cpp.s
+
 src/JsApi.o: src/JsApi.cpp.o
 
 .PHONY : src/JsApi.o
@@ -240,6 +267,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... pwpaint.html"
 	@echo "... edit_cache"
+	@echo "... src/Brushes.o"
+	@echo "... src/Brushes.i"
+	@echo "... src/Brushes.s"
 	@echo "... src/JsApi.o"
 	@echo "... src/JsApi.i"
 	@echo "... src/JsApi.s"

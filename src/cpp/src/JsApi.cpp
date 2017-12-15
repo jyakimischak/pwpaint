@@ -15,6 +15,7 @@ using namespace std;
 extern "C" void init() {
   paintAreaState.newDrawing();
   hasBeenInitialized = true;
+  loadDefaultBrushes();
   cout << "Initialized..." << endl;
 }
 

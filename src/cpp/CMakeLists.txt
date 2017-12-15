@@ -21,6 +21,7 @@ STRING(CONCAT EXPORTED_FUNCTIONS "-s "
         "'_setPaBackgroundColor' "
     "]\" "
     "-s USE_SDL=2 "
+    "-s USE_SDL_IMAGE=2 "
 #    "-s WASM=1 "
 )
 SET(CMAKE_CXX_FLAGS ${EXPORTED_FUNCTIONS})

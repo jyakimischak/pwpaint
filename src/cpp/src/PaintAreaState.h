@@ -12,7 +12,7 @@
 #include <emscripten.h>
 #include "PaintUtil.h"
 
-extern SDL_Surface* screen;
+extern SDL_Surface* screenPtr;
 extern Color defaultBaseLayerColor;
 
 
@@ -37,7 +37,7 @@ class PaintAreaState {
         void apply();
 
     private:
-        SDL_Surface* baseLayerSurface;
+        SDL_Surface* baseLayerSurfacePtr;
 
         void drawBaseLayer();
         void drawOtherLayers();

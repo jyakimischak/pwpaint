@@ -13,6 +13,8 @@
 #include <emscripten.h>
 #include "PaintUtil.h"
 #include "PaintAreaState.h"
+#include "Brushes.h"
+
 
 extern bool hasBeenInitialized;
 extern int standardWidth;

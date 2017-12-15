@@ -13,9 +13,10 @@
 #include <emscripten.h>
 #include "PaintUtil.h"
 #include "PaintAreaState.h"
+#include "Brushes.h"
 
 
-extern SDL_Surface* screen;
+extern SDL_Surface* screenPtr;
 
 //***********************************************************************************************
 // PwPaint.cpp main
