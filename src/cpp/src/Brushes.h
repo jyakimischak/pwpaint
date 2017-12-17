@@ -12,6 +12,9 @@
 #include <SDL2/SDL_image.h>
 #include <emscripten.h>
 #include <map>
+#include "PwLog.h"
+
+extern PwLog pwLog;
 
 void loadDefaultBrushes();
 
@@ -31,6 +34,6 @@ class Brush {
 };
 
 extern std::map<std::string, Brush> brushes;
-
+extern SDL_Renderer *rendererPtr;
 
 #endif

@@ -258,6 +258,33 @@ src/PaintUtil.cpp.s:
 	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/PaintUtil.cpp.s
 .PHONY : src/PaintUtil.cpp.s
 
+src/PwLog.o: src/PwLog.cpp.o
+
+.PHONY : src/PwLog.o
+
+# target to build an object file
+src/PwLog.cpp.o:
+	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/PwLog.cpp.o
+.PHONY : src/PwLog.cpp.o
+
+src/PwLog.i: src/PwLog.cpp.i
+
+.PHONY : src/PwLog.i
+
+# target to preprocess a source file
+src/PwLog.cpp.i:
+	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/PwLog.cpp.i
+.PHONY : src/PwLog.cpp.i
+
+src/PwLog.s: src/PwLog.cpp.s
+
+.PHONY : src/PwLog.s
+
+# target to generate assembly for a file
+src/PwLog.cpp.s:
+	$(MAKE) -f CMakeFiles/pwpaint.html.dir/build.make CMakeFiles/pwpaint.html.dir/src/PwLog.cpp.s
+.PHONY : src/PwLog.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -282,6 +309,9 @@ help:
 	@echo "... src/PaintUtil.o"
 	@echo "... src/PaintUtil.i"
 	@echo "... src/PaintUtil.s"
+	@echo "... src/PwLog.o"
+	@echo "... src/PwLog.i"
+	@echo "... src/PwLog.s"
 .PHONY : help
 
 

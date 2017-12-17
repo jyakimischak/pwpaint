@@ -11,11 +11,12 @@
 #include <SDL2/SDL.h>
 // #include "SDL_gfxPrimitives.h"
 #include <emscripten.h>
+#include "PwLog.h"
 #include "PaintUtil.h"
 #include "PaintAreaState.h"
 #include "Brushes.h"
 
-
+extern PwLog pwLog;
 extern bool hasBeenInitialized;
 extern int standardWidth;
 extern int defaultCanvasWidth;

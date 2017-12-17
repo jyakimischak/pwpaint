@@ -10,8 +10,10 @@
 #include <SDL2/SDL.h>
 // #include "SDL_gfxPrimitives.h"
 #include <emscripten.h>
+#include "PwLog.h"
 #include "PaintUtil.h"
 
+extern PwLog pwLog;
 extern SDL_Surface* screenPtr;
 extern Color defaultBaseLayerColor;
 

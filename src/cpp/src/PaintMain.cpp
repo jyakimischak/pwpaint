@@ -9,7 +9,7 @@
 using namespace std;
 
 SDL_Window *window;
-SDL_Renderer *renderer;
+SDL_Renderer *rendererPtr;
 
 SDL_Event e;
 
@@ -21,14 +21,14 @@ bool hasBeenInitialized = false;
  */
 extern "C" int main(int argc, char * argv[]) {
     SDL_Init(SDL_INIT_EVERYTHING);
-    SDL_CreateWindowAndRenderer(256, 256, 0, &window, &renderer);
+    SDL_CreateWindowAndRenderer(256, 256, 0, &window, &rendererPtr);
 
     SDL_Surface *s = SDL_CreateRGBSurface(0, 256, 256, 8, 0, 0, 0, 0);
 
  SDL_Rect outlineRect = { 200, 200, 200, 200 };
-                SDL_SetRenderDrawColor( renderer, 0xFF, 0xFF, 0x00, 0xFF );        
-                SDL_RenderDrawRect( renderer, &outlineRect );
-                SDL_RenderPresent( renderer );
+                SDL_SetRenderDrawColor( rendererPtr, 0xFF, 0xFF, 0x00, 0xFF );        
+                SDL_RenderDrawRect( rendererPtr, &outlineRect );
+                SDL_RenderPresent( rendererPtr );
 
     //   filledEllipseRGBA(s,
     //                     60, 40,

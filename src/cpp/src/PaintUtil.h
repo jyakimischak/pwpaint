@@ -12,6 +12,9 @@
 // #include "SDL_gfxPrimitives.h"
 #include <unistd.h>
 #include <emscripten.h>
+#include "PwLog.h"
+
+extern PwLog pwLog;
 
 class Color {
     public:

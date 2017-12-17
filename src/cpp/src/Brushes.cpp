@@ -38,7 +38,12 @@ Brush::Brush(string name, string fileName) {
     this->name = name;
     this->fileName = fileName;
 
-    SDL_Surface* tempSurfacePtr = IMG_Load(fileName.c_str());
+    SDL_Surface* tempSurPtr = IMG_Load(fileName.c_str());
+    texturePtr = SDL_CreateTextureFromSurface(rendererPtr, tempSurPtr);
+    if(texturePtr == NULL) {
+
+    }
+
 }
 
 
