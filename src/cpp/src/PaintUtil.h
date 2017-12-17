@@ -8,13 +8,14 @@
 #define PAINT_UTIL_H
 
 #include <iostream>
+#include <sstream>
 #include <SDL2/SDL.h>
-// #include "SDL_gfxPrimitives.h"
 #include <unistd.h>
 #include <emscripten.h>
 #include "PwLog.h"
 
 extern PwLog pwLog;
+extern std::ostringstream logoss;
 
 class Color {
     public:

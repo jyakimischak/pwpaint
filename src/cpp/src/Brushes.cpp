@@ -15,7 +15,7 @@ map<string, Brush> brushes;
  * Load all of the default brushes.
  */
 void loadDefaultBrushes() {
-    brushes["TestBrush"] = Brush("TestBrush", "TestBrush.png");
+    brushes["TestBrush"] = Brush("TestBrush", "images/brushes/TestBrush.png");
 }
 
 
@@ -41,9 +41,12 @@ Brush::Brush(string name, string fileName) {
     SDL_Surface* tempSurPtr = IMG_Load(fileName.c_str());
     texturePtr = SDL_CreateTextureFromSurface(rendererPtr, tempSurPtr);
     if(texturePtr == NULL) {
-
+        SDL_FreeSurface(tempSurPtr);
+        logoss << "Could not load brush " << name << " file " << fileName << ": " << SDL_GetError();
+        pwLog.error("Brushes", "Brush", "Brush");
+        return;
     }
-
+    SDL_FreeSurface(tempSurPtr);
 }
 
 

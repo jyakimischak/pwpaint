@@ -7,13 +7,14 @@
 #define PAINT_AREA_STATE_H
 
 #include <iostream>
+#include <sstream>
 #include <SDL2/SDL.h>
-// #include "SDL_gfxPrimitives.h"
 #include <emscripten.h>
 #include "PwLog.h"
 #include "PaintUtil.h"
 
 extern PwLog pwLog;
+extern std::ostringstream logoss;
 extern SDL_Surface* screenPtr;
 extern Color defaultBaseLayerColor;
 

@@ -14,18 +14,43 @@ using namespace std;
     LogLevel logLevel = ERROR;
 #endif
 
+PwLog pwLog;
+ostringstream logoss;
+
 //***********************************************************************************************
 // Log
 //***********************************************************************************************
 
-void PwLog::info(string source, string msg) {
+void PwLog::info(string fileName, string functionName) {
     if(logLevel == ERROR) {
         return;
     }
-    cout << "INFO - " << source << ": " << msg << endl;
+    printMsg(fileName, "", functionName);
 }
 
-void PwLog::error(string source, string msg) {
-    cout << "ERROR - " << source << ": " << msg << endl;
+void PwLog::info(string fileName, string className, string functionName) {
+    if(logLevel == ERROR) {
+        return;
+    }
+    printMsg(fileName, className, functionName);
 }
+
+void PwLog::error(string fileName, string functionName) {
+    printMsg(fileName, "", functionName);
+}
+
+void PwLog::error(string fileName, string className, string functionName) {
+    printMsg(fileName, className, functionName);
+}
+
+void PwLog::printMsg(string fileName, string className, string functionName) {
+    if(className.empty()) {
+        cout << "INFO => " << fileName << "." << functionName << "(): " << logoss.str() << endl;
+    } else {
+        cout << "INFO => " << fileName << "." << className << "." << functionName << "(): " << logoss.str() << endl;
+    }
+    logoss.str("");
+    logoss.clear();
+}
+
 

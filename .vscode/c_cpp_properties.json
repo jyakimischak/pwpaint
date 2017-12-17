@@ -52,7 +52,9 @@
                 "/home/jonas/software/emscripten/emsdk-portable/emscripten/1.37.22/system/include/SDL",
                 "/home/jonas/software/emscripten/emsdk-portable/emscripten/1.37.22/system/include/SSE",
                 "/home/jonas/software/emscripten/emsdk-portable/emscripten/1.37.22/system/include/uuid",
-                "/home/jonas/software/emscripten/emsdk-portable/emscripten/1.37.22/system/include/X11"
+                "/home/jonas/software/emscripten/emsdk-portable/emscripten/1.37.22/system/include/X11",
+                "/home/jonas/.emscripten_ports/sdl2/SDL2-version_13/include",
+                "/home/jonas/.emscripten_ports/sdl2-image/SDL2_image-version_3"
             ],
             "defines": [],
             "intelliSenseMode": "clang-x64",

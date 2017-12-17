@@ -7,8 +7,8 @@
 #define PAINT_MAIN_H
 
 #include <iostream>
+#include <sstream>
 #include <SDL2/SDL.h>
-// #include "SDL_gfxPrimitives.h"
 #include <unistd.h>
 #include <emscripten.h>
 #include "PwLog.h"
@@ -17,6 +17,7 @@
 #include "Brushes.h"
 
 extern PwLog pwLog;
+extern std::ostringstream logoss;
 extern SDL_Surface* screenPtr;
 extern SDL_Renderer *rendererPtr;
 

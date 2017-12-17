@@ -8,8 +8,8 @@
 #define JS_API_H
 
 #include <iostream>
+#include <sstream>
 #include <SDL2/SDL.h>
-// #include "SDL_gfxPrimitives.h"
 #include <emscripten.h>
 #include "PwLog.h"
 #include "PaintUtil.h"
@@ -17,6 +17,7 @@
 #include "Brushes.h"
 
 extern PwLog pwLog;
+extern std::ostringstream logoss;
 extern bool hasBeenInitialized;
 extern int standardWidth;
 extern int defaultCanvasWidth;

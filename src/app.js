@@ -12,7 +12,7 @@ require.context(".", true, /^.*\.scss$/)
 require("./cpp/pwpaint.js")
 
 //Images
-// require.context("./images", true, /\.(png|jpg|jpeg|gif|svg)$/)
+require.context("./images", true, /\.(png|jpg|jpeg|gif|svg)$/)
 
 //jquery
 require("../node_modules/jquery/dist/jquery.min.js")

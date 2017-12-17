@@ -9,6 +9,7 @@
 #define PW_LOG_H
 
 #include <iostream>
+#include <sstream>
 
 
 enum LogLevel {
@@ -19,11 +20,15 @@ extern LogLevel logLevel;
 
 class PwLog {
     public:
-        void info(std::string source, std::string msg);
-        void error(std::string source, std::string msg);
+        void info(std::string fileName, std::string functionName);
+        void info(std::string fileName, std::string className, std::string functionName);
+        void error(std::string fileName, std::string functionName);
+        void error(std::string fileName, std::string className, std::string functionName);
+    private:
+        void printMsg(std::string fileName, std::string className, std::string functionName);
 };
 extern PwLog pwLog;
-
+extern std::ostringstream logoss;
 
 #endif
 

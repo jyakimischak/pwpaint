@@ -8,13 +8,15 @@
 #define BRUSHES_H
 
 #include <iostream>
+#include <sstream>
 #include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
+#include <SDL_image.h>
 #include <emscripten.h>
 #include <map>
 #include "PwLog.h"
 
 extern PwLog pwLog;
+extern std::ostringstream logoss;
 
 void loadDefaultBrushes();
 
